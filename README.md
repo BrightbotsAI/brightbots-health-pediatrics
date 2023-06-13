@@ -5,7 +5,7 @@ This project provide an outstanding online experience for their patients, they a
 
 [Foo Medical](https://foomedical.com/) is a **ready to use medical practice sample app** that's open source. It's meant for developers to clone, customize and run.
 
-### Features
+### Features modules
 
 - Completely free and open-source
 - Secure and compliant [Medplum](https://www.medplum.com) backend, which is also open source
