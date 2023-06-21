@@ -17,7 +17,7 @@ export function AccountPage(): JSX.Element {
     <Container>
       <Group align="top">
         <SideMenu {...sideMenu} />
-        <div style={{ width: 800, flex: 800 }}>
+        <div style={{ width: '100%',}}>
           <Suspense fallback={<div>Loading...</div>}>
             <Outlet />
           </Suspense>

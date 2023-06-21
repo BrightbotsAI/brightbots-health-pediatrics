@@ -1,11 +1,16 @@
-import { Box, NativeSelect, Stack, TextInput, Title } from '@mantine/core';
+import { Box, Flex, NativeSelect, Stack, TextInput, Title } from '@mantine/core';
 import { formatAddress, formatFamilyName, formatGivenName, formatHumanName } from '@medplum/core';
-import { HumanName, Patient } from '@medplum/fhirtypes';
+import { HumanName, Identifier, Patient } from '@medplum/fhirtypes';
 import { Form, ResourceAvatar, useMedplumProfile } from '@medplum/react';
 import { InfoSection } from '../../components/InfoSection';
+import { Address } from 'cluster';
+import { on } from 'events';
+import { backgroundColor } from '../health-record/Measurement';
 
 export function Profile(): JSX.Element | null {
   const profile = useMedplumProfile() as Patient;
+/*Create Constant */
+
   return (
     <Box p="xl">
       <Form
@@ -16,38 +21,70 @@ export function Profile(): JSX.Element | null {
         <Stack align="center">
           <ResourceAvatar size={200} radius={100} value={profile} />
           <Title order={2}>{formatHumanName(profile.name?.[0] as HumanName)}</Title>
-          <InfoSection title="Personal Information">
-            <Box p="xl" w={500}>
+          <InfoSection
+            title="Profile">
+            <Box p="xl" w={'100%'}>
               <Stack>
-                <TextInput
-                  label="First Name"
-                  name="givenName"
-                  defaultValue={formatGivenName(profile.name?.[0] as HumanName)}
+                <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>First Name</h3>
+                  <TextInput style={{ width: 400 }}
+                    name="givenName"
+                    defaultValue={formatGivenName(profile.name?.[0] as HumanName)}
+                    />
+                </Box> 
+                <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>Last Name</h3>
+                  <TextInput
+                    name="familyName"
+                    defaultValue={formatFamilyName(profile.name?.[0] as HumanName)}
+                  />
+                </Box> 
+                <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>Name Purpose</h3>                 
+                  <NativeSelect
+                    name="nPurpose"
+                    // defaultValue={profile.use}
+                    data={['', 'usual' , 'official' , 'temp' , 'nickname', 'anonymous' , 'old' , 'maiden']}
+                  />
+                </Box>
+                <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>Gender</h3>
+                  <NativeSelect 
+                   name="gender"
+                   defaultValue={profile.gender}
+                   data={['', 'female', 'male', 'other', 'unknown']}
                 />
-                <TextInput
-                  label="Last Name"
-                  name="familyName"
-                  defaultValue={formatFamilyName(profile.name?.[0] as HumanName)}
-                />
-                <NativeSelect
-                  label="Gender"
-                  name="gender"
-                  defaultValue={profile.gender}
-                  data={['', 'female', 'male', 'other', 'unknown']}
-                />
-                <TextInput label="Birth Date" name="birthDate" type="date" defaultValue={profile.birthDate} />
-              </Stack>
-            </Box>
-          </InfoSection>
-          <InfoSection title="Contact Information">
-            <Box p="xl" w={500}>
-              <Stack>
-                <TextInput
-                  label="Email"
-                  name="email"
-                  defaultValue={profile.telecom?.find((t) => t.system === 'email')?.value}
-                />
-                <TextInput label="Address" name="address" defaultValue={formatAddress(profile.address?.[0] || {})} />
+                </Box>
+                <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>Birth Date</h3>
+                  <TextInput
+                  name="birthDate"
+                  type="date"
+                  defaultValue={profile.birthDate}
+                  />
+                </Box>
+                <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>Email</h3>
+                  <TextInput
+                    name="email"
+                    defaultValue={profile.telecom?.find((t) => t.system === 'email')?.value}
+                  />
+                  </Box>
+                  <Box style={{ 
+                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
+                  <h3>Address</h3>
+                  <TextInput
+                    label="Address"
+                    name="address"
+                    defaultValue={formatAddress(profile.address?.[0] || {})}
+                  />
+                </Box>           
               </Stack>
             </Box>
           </InfoSection>
