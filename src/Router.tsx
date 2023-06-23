@@ -20,16 +20,16 @@ import { HomePage } from './pages/HomePage';
 import { Messages } from './pages/MessagesPage';
 import { ObservationPage } from './pages/ObservationPage';
 import { SignOutPage } from './pages/SignOutPage';
-import { FormularyGeneral } from './pages/appoiments/GeneralAppoiment';
-import { FormularySpecial } from './pages/appoiments/SpecialAppoiment';
+import { FormularyGeneral } from './pages/appointments/GeneralAppointment';
+import { FormularySpecial } from './pages/appointments/SpecialAppointment';
 
 export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="messages/*" element={<Messages />} />
-      <Route path="general-apoiment/*" element={<FormularyGeneral />} />
-      <Route path="special-apoiment/*" element={<FormularySpecial />} />
+      <Route path="general-appointment/*" element={<FormularyGeneral />} />
+      <Route path="special-appointment/*" element={<FormularySpecial />} />
       <Route path="health-record/*" element={<HealthRecord />}>
         <Route index element={<Navigate replace to="/health-record/lab-results" />} />
         <Route path="lab-results/*" element={<LabResults />} />
