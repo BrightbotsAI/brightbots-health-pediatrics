@@ -55,6 +55,7 @@
     "vite": "4.3.9"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1"
+    "@emotion/react": "^11.11.1",
+    "@mantine/form": "^6.0.14"
   }
 }

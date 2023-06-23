@@ -1,12 +1,20 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { FormularyGeneral } from './pages/Appoiments/GeneralAppoiment';
+import { FormularySpecial } from './pages/Appoiments/SpecialAppoiment';
+import { GetCare } from './pages/GetCarePage';
+import { HomePage } from './pages/HomePage';
+import { Messages } from './pages/MessagesPage';
+import { ObservationPage } from './pages/ObservationPage';
+import { SignOutPage } from './pages/SignOutPage';
 import { AccountPage } from './pages/account';
 import { MembershipAndBilling } from './pages/account/MembershipAndBilling';
+import { Patient } from './pages/account/Patient';
 import { Profile } from './pages/account/Profile';
 import { Provider } from './pages/account/Provider';
+import { Pagerequest } from './pages/appointment-request/index';
 import { CarePlanPage } from './pages/care-plan';
 import { ActionItem } from './pages/care-plan/ActionItem';
 import { ActionItems } from './pages/care-plan/ActionItems';
-import { GetCare } from './pages/GetCarePage';
 import { HealthRecord } from './pages/health-record';
 import { LabResult } from './pages/health-record/LabResult';
 import { LabResults } from './pages/health-record/LabResults';
@@ -16,11 +24,6 @@ import { Medications } from './pages/health-record/Medications';
 import { Vaccine } from './pages/health-record/Vaccine';
 import { Vaccines } from './pages/health-record/Vaccines';
 import { Vitals } from './pages/health-record/Vitals';
-import { HomePage } from './pages/HomePage';
-import { Messages } from './pages/MessagesPage';
-import { ObservationPage } from './pages/ObservationPage';
-import { SignOutPage } from './pages/SignOutPage';
-import {Pagerequest } from './pages/appointment-request/index';
 
 export function Router(): JSX.Element {
   return (
@@ -28,6 +31,8 @@ export function Router(): JSX.Element {
       <Route path="/" element={<HomePage />} />
       <Route path="messages/*" element={<Messages />} />
       <Route path="appointment-request/*" element={<Pagerequest />} />
+      <Route path="general-appointment/*" element={<FormularyGeneral />} />
+      <Route path="special-appointment/*" element={<FormularySpecial />} />
       <Route path="health-record/*" element={<HealthRecord />}>
         <Route index element={<Navigate replace to="/health-record/lab-results" />} />
         <Route path="lab-results/*" element={<LabResults />} />
@@ -49,6 +54,7 @@ export function Router(): JSX.Element {
       <Route path="account/*" element={<AccountPage />}>
         <Route index element={<Navigate replace to="/account/profile" />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="patient" element={<Patient />} />
         <Route path="provider/*" element={<Provider />} />
         <Route path="membership-and-billing" element={<MembershipAndBilling />} />
       </Route>
