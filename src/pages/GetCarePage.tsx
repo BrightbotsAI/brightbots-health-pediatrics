@@ -17,19 +17,19 @@ export function GetCare(): JSX.Element {
               id: 'id-1',//first the id to identify the component
               linkId: 'q1',//the link to linked the id
               type: 'string',// The type of answer (text, numbers, date, etc)
-              text: 'Question 1',//the text that show the programm to orient the user
+              text: 'Sickness',//the text that show the programm to orient the user
             },
             {
               id: 'id-2',
               linkId: 'q2',
               type: 'string',
-              text: 'Question 2',
+              text: 'Alergy',
             },
             {
               id: 'id-3',
               linkId: 'q3',
               type: 'string',
-              text: 'Question 3',
+              text: 'Other...',
             },
           ],
         }}
