@@ -35,7 +35,7 @@ export function FormularySpecial(): JSX.Element{
       });
   return(
     <div>
-      <h1 id="ScheduleGeneral" style={{color: "#00ABC1", fontFamily: "Roboto", fontWeight: "bold", marginLeft: 10}}>  Schedule general appointment</h1>
+      <h1 id="ScheduleGeneral" style={{color: "#00ABC1", fontFamily: "Roboto", fontWeight: "bold", marginLeft: 10}}>  Schedule special appointment</h1>
       <br /><br />
       <Container px={385} mx="auto">
         <Center style={{borderTop: 4,border: "solid", borderColor:"#00ABC1", borderRadius: "10px"}}>
