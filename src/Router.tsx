@@ -20,12 +20,14 @@ import { HomePage } from './pages/HomePage';
 import { Messages } from './pages/MessagesPage';
 import { ObservationPage } from './pages/ObservationPage';
 import { SignOutPage } from './pages/SignOutPage';
+import {Pagerequest } from './pages/appointment-request/index';
 
 export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="messages/*" element={<Messages />} />
+      <Route path="appointment-request/*" element={<Pagerequest />} />
       <Route path="health-record/*" element={<HealthRecord />}>
         <Route index element={<Navigate replace to="/health-record/lab-results" />} />
         <Route path="lab-results/*" element={<LabResults />} />
@@ -53,4 +55,4 @@ export function Router(): JSX.Element {
       <Route path="signout" element={<SignOutPage />} />
     </Routes>
   );
-}
+  }
