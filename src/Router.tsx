@@ -24,11 +24,13 @@ import { Medications } from './pages/health-record/Medications';
 import { Vaccine } from './pages/health-record/Vaccine';
 import { Vaccines } from './pages/health-record/Vaccines';
 import { Vitals } from './pages/health-record/Vitals';
+import { CalendarMenu } from './pages/calendar';
 
 export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="calendarmenu/*" element={<CalendarMenu />} />
       <Route path="messages/*" element={<Messages />} />
       <Route path="appointment-request/*" element={<Pagerequest />} />
       <Route path="general-appointment/*" element={<FormularyGeneral />} />
