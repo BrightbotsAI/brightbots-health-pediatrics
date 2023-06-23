@@ -1,6 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { FormularyGeneral } from './pages/Appoiments/GeneralAppoiment';
-import { FormularySpecial } from './pages/Appoiments/SpecialAppoiment';
 import { GetCare } from './pages/GetCarePage';
 import { HomePage } from './pages/HomePage';
 import { Messages } from './pages/MessagesPage';
@@ -25,6 +23,8 @@ import { Vaccine } from './pages/health-record/Vaccine';
 import { Vaccines } from './pages/health-record/Vaccines';
 import { Vitals } from './pages/health-record/Vitals';
 import { CalendarMenu } from './pages/calendar';
+import { FormularyGeneral } from './pages/appointments/GeneralAppointment';
+import { FormularySpecial } from './pages/appointments/SpecialAppointment';
 
 export function Router(): JSX.Element {
   return (
