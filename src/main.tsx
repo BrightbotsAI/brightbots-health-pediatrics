@@ -10,8 +10,15 @@ const medplum = new MedplumClient({
   onUnauthenticated: () => (window.location.href = '/'),
 });
 
+
 const theme: MantineThemeOverride = {
-  primaryColor: 'cyan',
+
+  fontFamily: 'sans-serif',
+  colors: {
+    brand: ['#d0ebff', '#00ABC1', '#00ABC1', '#00ABC1', '#00ABC1', '#00ABC1', '#FF00A1', '#00ABC1', '#00ABC1', '#00ABC1'],
+  },
+  
+  primaryColor: 'brand',
   primaryShade: 8,
   fontSizes: {
     xs: '0.6875rem',
