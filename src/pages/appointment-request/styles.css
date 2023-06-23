@@ -1,0 +1,34 @@
+.tittle{
+    color:#00ABC1;
+    font-family: "Roboto";
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.image_request{
+    display: flex;
+    justify-content: center;
+}
+
+.general_app{
+    width: 40%;
+    text-align: center; 
+}
+
+.general_app img{
+    height: 200px;
+    width: 400px;
+    background-color: #00ABC1;
+    border-radius: 2%;
+    object-fit: cover;
+}
+
+img:hover{
+    transform: scale(1.2);
+}
+
+.general_app h2{
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
