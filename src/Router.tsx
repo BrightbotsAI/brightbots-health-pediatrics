@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { AccountPage } from './pages/account';
 import { MembershipAndBilling } from './pages/account/MembershipAndBilling';
 import { Profile } from './pages/account/Profile';
+import { Patient } from './pages/account/Patient';
 import { Provider } from './pages/account/Provider';
 import { CarePlanPage } from './pages/care-plan';
 import { ActionItem } from './pages/care-plan/ActionItem';
@@ -47,6 +48,7 @@ export function Router(): JSX.Element {
       <Route path="account/*" element={<AccountPage />}>
         <Route index element={<Navigate replace to="/account/profile" />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="patient" element={<Patient />} />
         <Route path="provider/*" element={<Provider />} />
         <Route path="membership-and-billing" element={<MembershipAndBilling />} />
       </Route>

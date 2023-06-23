@@ -10,86 +10,95 @@ import { backgroundColor } from '../health-record/Measurement';
 export function Profile(): JSX.Element | null {
   const profile = useMedplumProfile() as Patient;
 /*Create Constant */
+const style: React.CSSProperties = {
+  width: '95%', display: "flex", justifyContent: "space-between", margin: "auto", borderBottom:'1px solid rgba(0, 0, 0, 0.25)', padding:' 0 4%', alignItems:'center',};
+
+const ContainerStyle: React.CSSProperties = 
+  {width:'30%', marginLeft:'8rem', marginTop:'1.5%', alignItems:'center', justifyContent:'space-around' ,
+           display:'flex' , minWidth:'656px', minHeight:'175px' , maxWidth:'656px', maxHeight:'175px',
+            backgroundColor, borderRadius:'30px 90px 90px 30px', color:'#ffffff', fontWeight:'300'};
+
+const TitleStyle: React.CSSProperties = {
+  color:'#ffffff', fontSize: '25px', fontFamily: 'sans-serif', fontWeight: '300'};
+
+const TextStyle: React.CSSProperties = {
+  color:'#000', fontSize:'25px', fontFamily: 'sans-serif', fontWeight:'300'};
+
+const InfoStyle: React.CSSProperties = {
+  width: '50%', height: '60%'};
 
   return (
-    <Box p="xl">
-      <Form
-        onSubmit={(formData: Record<string, string>) => {
-          console.log('formData', formData);
-        }}
-      >
-        <Stack align="center">
-          <ResourceAvatar size={200} radius={100} value={profile} />
-          <Title order={2}>{formatHumanName(profile.name?.[0] as HumanName)}</Title>
-          <InfoSection
-            title="Profile">
+
+    //stablidhing properties to all the component
+
+    <Box p="xl" style= {{width:'100%',}}> 
+      <Stack align="center">
+      <InfoSection title="Profile">
+          <Box style= {ContainerStyle}>
+            <ResourceAvatar size={150} radius={100} value={profile} />
+            <Title order={2} style= {TitleStyle}>
+              {formatHumanName(profile.name?.[0] as HumanName)}
+            </Title>
+          </Box>
+
             <Box p="xl" w={'100%'}>
               <Stack>
-                <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>First Name</h3>
-                  <TextInput style={{ width: 400 }}
+                <Box style={style}>
+                  <h3 style={TextStyle}>First Name</h3>
+                  <TextInput style={InfoStyle} disabled
                     name="givenName"
                     defaultValue={formatGivenName(profile.name?.[0] as HumanName)}
                     />
                 </Box> 
-                <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>Last Name</h3>
-                  <TextInput
+                <Box style={style}>
+                  <h3 style={TextStyle}>Last Name</h3>
+                  <TextInput style={InfoStyle} disabled
                     name="familyName"
                     defaultValue={formatFamilyName(profile.name?.[0] as HumanName)}
                   />
                 </Box> 
-                <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>Name Purpose</h3>                 
-                  <NativeSelect
+                <Box style={style}>
+                  <h3 style={TextStyle}>Name Purpose</h3>                 
+                  <NativeSelect style={InfoStyle}
                     name="nPurpose"
                     // defaultValue={profile.use}
                     data={['', 'usual' , 'official' , 'temp' , 'nickname', 'anonymous' , 'old' , 'maiden']}
                   />
                 </Box>
-                <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>Gender</h3>
-                  <NativeSelect 
+                <Box style={style}>
+                  <h3 style={TextStyle}>Gender</h3>
+                  <NativeSelect style={InfoStyle}
                    name="gender"
                    defaultValue={profile.gender}
                    data={['', 'female', 'male', 'other', 'unknown']}
                 />
                 </Box>
-                <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>Birth Date</h3>
-                  <TextInput
+                <Box style={style}>
+                  <h3 style={TextStyle}>Birth Date</h3>
+                  <TextInput style={InfoStyle}
                   name="birthDate"
                   type="date"
                   defaultValue={profile.birthDate}
                   />
                 </Box>
-                <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>Email</h3>
-                  <TextInput
+                <Box style={style}>
+                  <h3 style={TextStyle}>Email</h3>
+                  <TextInput style={InfoStyle} disabled
                     name="email"
                     defaultValue={profile.telecom?.find((t) => t.system === 'email')?.value}
                   />
                   </Box>
-                  <Box style={{ 
-                  width: '80%', display: "flex", justifyContent: "space-between", margin: "auto"}}>
-                  <h3>Address</h3>
-                  <TextInput
-                    label="Address"
+                  <Box style={style}>
+                  <h3 style={TextStyle}>Address</h3>
+                  <TextInput style={InfoStyle}
                     name="address"
                     defaultValue={formatAddress(profile.address?.[0] || {})}
                   />
                 </Box>           
               </Stack>
             </Box>
-          </InfoSection>
+            </InfoSection>
         </Stack>
-      </Form>
     </Box>
   );
 }
