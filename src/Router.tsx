@@ -25,6 +25,7 @@ import { Vitals } from './pages/health-record/Vitals';
 import { CalendarMenu } from './pages/calendar';
 import { FormularyGeneral } from './pages/appointments/GeneralAppointment';
 import { FormularySpecial } from './pages/appointments/SpecialAppointment';
+import { HomePediatricPage } from './pages/landing-pediatric';
 
 export function Router(): JSX.Element {
   return (
