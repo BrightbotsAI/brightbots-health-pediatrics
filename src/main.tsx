@@ -11,7 +11,7 @@ const medplum = new MedplumClient({
 });
 
 const theme: MantineThemeOverride = {
-  primaryColor: 'teal',
+  primaryColor: 'cyan',
   primaryShade: 8,
   fontSizes: {
     xs: '0.6875rem',

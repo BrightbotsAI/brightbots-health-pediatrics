@@ -167,7 +167,7 @@ export function Header(): JSX.Element {
               <Logo width={240} />
             </UnstyledButton>
 
-            <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
+            {/* <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
               <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
@@ -218,7 +218,7 @@ export function Header(): JSX.Element {
               <a href="#" className={classes.link}>
                 More
               </a>
-            </Group>
+            </Group> */}
 
             <Group className={classes.hiddenMobile}>
               <Button variant="default" onClick={() => navigate('/signin')}>

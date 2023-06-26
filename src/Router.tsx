@@ -20,11 +20,13 @@ import { HomePage } from './pages/HomePage';
 import { Messages } from './pages/MessagesPage';
 import { ObservationPage } from './pages/ObservationPage';
 import { SignOutPage } from './pages/SignOutPage';
+import { HomePediatricPage } from './pages/landing-pediatric';
 
 export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePediatricPage />} />
       <Route path="messages/*" element={<Messages />} />
       <Route path="health-record/*" element={<HealthRecord />}>
         <Route index element={<Navigate replace to="/health-record/lab-results" />} />

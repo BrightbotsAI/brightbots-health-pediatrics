@@ -9,6 +9,7 @@ import { LandingPage } from './pages/landing';
 import { RegisterPage } from './pages/RegisterPage';
 import { SignInPage } from './pages/SignInPage';
 import { Router } from './Router';
+import { HomePediatricPage } from './pages/landing-pediatric';
 
 export function App(): JSX.Element | null {
   const location = useLocation();
@@ -21,7 +22,8 @@ export function App(): JSX.Element | null {
   if (!medplum.getProfile()) {
     return (
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        {/* <Route path="/" element={<LandingPage />} /> */}
+        <Route path="/" element={<HomePediatricPage />} />
         <Route path="signin" element={<SignInPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="*" element={<Navigate replace to="/" />} />
