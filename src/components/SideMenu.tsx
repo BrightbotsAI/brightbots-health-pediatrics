@@ -16,6 +16,7 @@ const useStyles = createStyles((theme) => {
   const icon = getStylesRef('icon');
   return {
     container: {
+      display:'flex',
       flex: 200,
       width: 200,
       paddingTop: 32,
@@ -66,9 +67,8 @@ export function SideMenu(props: SideMenuProps): JSX.Element {
   const { classes, cx } = useStyles();
   return (
     <div className={classes.container}>
-      <Title order={4} className={classes.title}>
-        {props.title}
-      </Title>
+
+      
       {props.menu.map((item) => (
         <React.Fragment key={item.href}>
           <NavLink to={item.href} end className={({ isActive }) => cx(classes.link, isActive && classes.linkActive)}>
@@ -86,3 +86,9 @@ export function SideMenu(props: SideMenuProps): JSX.Element {
     </div>
   );
 }
+
+//removed tittle
+
+      /*<Title order={4} className={classes.title}>
+        {props.title}
+      </Title>*/

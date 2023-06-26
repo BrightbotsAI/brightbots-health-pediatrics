@@ -10,9 +10,11 @@ export function Messages(): JSX.Element {
   const profile = useMedplumProfile() as Patient;
   const [messages, setMessages] = useState<Communication[]>();
 
-  useEffect(() => {
+  useEffect(() => { //uses React's "useEffect" hook to call a GraphQL API using the "medplum" library.
     medplum
       .graphql(
+        /*In this query, a list of communications having a certain subject "(subject)" obtained from a function "getReferenceString" 
+        is requested by passing the profile "(profile)" as an argument.*/
         `
         {
           CommunicationList(subject: "${getReferenceString(profile)}") {
@@ -61,8 +63,10 @@ export function Messages(): JSX.Element {
       }
         `
       )
+      /*The GraphQL query response is in the "then" function, using the "setMessages" method to update the status of the component 
+      with the messages received.*/
       .then((value) => setMessages(value.data.CommunicationList as Communication[]))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err));//in case of error
   }, [medplum, profile]);
 
   if (!messages) {
@@ -72,9 +76,9 @@ export function Messages(): JSX.Element {
   return (
     <Document width={800}>
       <Title>Messages</Title>
-      <Divider my="xl" />
-      <Stack spacing="xl">
-        {messages.map((resource) => (
+      <Divider my="xl" />   
+      <Stack spacing="xl"> 
+        {messages.map((resource) => (//iterates over the "messages" array for each resource in messages, a div is rendered with a key set to the id of the resource.
           <div key={resource.id}>
             <Group align="top">
               <ResourceAvatar size="lg" radius="xl" value={resource.sender?.resource as Practitioner} />
@@ -95,16 +99,15 @@ export function Messages(): JSX.Element {
         <div style={{ margin: '0 -20px -20px -20px', padding: 20, background: '#f8f8f8' }}>
           <Form
             onSubmit={(formData: Record<string, string>) => {
-              medplum
-                .createResource({
+              medplum.createResource({
                   resourceType: 'Communication',
                   status: 'completed',
                   subject: createReference(profile),
                   sender: createReference(profile),
                   payload: [{ contentString: formData.contentString }],
                 })
-                .then((result) => setMessages([...messages, result]))
-                .catch(console.log);
+                .then((result) => setMessages([...messages, result]))//the result is added to the status "messages".
+                .catch(console.log);//in case of error
             }}
           >
             <Group align="top">

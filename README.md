@@ -37,6 +37,9 @@ Then, run the app!
 ```bash
 npm run dev
 ```
+```bash
+npm install @emotion/react
+```
 
 This app should run on `http://localhost:3000/`
 
