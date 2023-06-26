@@ -19,7 +19,7 @@ export const GridColumnComponent = ({
   };
   return (
     <>
-      <Image maw={340} radius="lg" src={imageSrc} alt={altText} mx="auto" />
+      <Image width={350} height={200} radius="lg" src={imageSrc} alt={altText} />
       <Center p="md">
         <Text style={p1}>{title}</Text>
       </Center>
