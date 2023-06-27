@@ -11,7 +11,11 @@ export function Logo(props: LogoProps): JSX.Element {
   const height = Math.round((180 / 1050) * width);
   return (
     <svg width="1050" height="180" viewBox="0 0 1343 150" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width, height, color }}>
-    <path
+{/* INTRODUCIRNG NEW LOGO */}
+    
+
+{/* COMMENTING OLD LOGO CODE  */}
+    {/* <path
         d="M222.183 59.8846V146.43H251.385V59.8846H271.538V40.4016H251.385V34.044C251.385 29.6689 252.207 26.5926 253.852 24.8152C255.635 22.9011 258.514 21.944 262.49 21.944C266.191 21.944 269.756 22.1491 273.183 22.5593V0.820341C270.716 0.683619 268.179 0.546899 265.574 0.410178C262.97 0.136728 260.365 0 257.76 0C245.832 0 236.921 3.00791 231.026 9.02372C225.13 15.0395 222.183 22.7644 222.183 32.1982V40.4016H204.703V59.8846H222.183Z"
         fill="currentColor" />
     <path
@@ -44,7 +48,7 @@ export function Logo(props: LogoProps): JSX.Element {
     <circle cx="75.5" cy="25" r="25" fill="currentColor" />
     <path
         d="M70.4455 24.7864V69.518H25.7139V80.0548H70.4455V124.786H80.9823V80.0548H125.714V69.518H80.9823V24.7864H70.4455Z"
-        fill="white" />
+        fill="white" /> */}
 </svg>
   );
 }
