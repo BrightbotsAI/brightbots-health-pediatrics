@@ -88,10 +88,9 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const navigation = [
-  { name: 'Health Record', href: '/health-record' },
-  { name: 'Messages', href: '/messages' },
-  { name: 'Care Plan', href: '/care-plan' },
-  { name: 'Get Care', href: '/get-care' },
+  { name: 'Home', href: '#' },
+  { name: 'About US', href: '#' },
+  { name: 'Patient Scheduling', href: '/appointment-request' },
 ];
 
 export function Header(): JSX.Element {
