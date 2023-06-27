@@ -30,7 +30,8 @@ import { HomePediatricPage } from './pages/landing-pediatric';
 export function Router(): JSX.Element {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      {/* <Route path="/" element={<HomePage />} /> */}
+      <Route path="/" element={<CalendarMenu />} />
       <Route path="/home" element={<HomePediatricPage />} />
       <Route path="calendarmenu/*" element={<CalendarMenu />} />
       <Route path="messages/*" element={<Messages />} />
