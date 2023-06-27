@@ -16,20 +16,23 @@ const useStyles = createStyles((theme) => ({
 export function Footer(): JSX.Element {
   const { classes } = useStyles();
 
+  const style: React.CSSProperties = {
+    color: '#ffffff', fontSize: '24px', fontFamily: 'sans-serif'};
+  
+
   return (
     <footer className={classes.footer}>
-      <div className={classes.inner}>
+      <div className={classes.inner} style={{backgroundColor:'#00ABC1'}}>
         <Container p="xl">
           <Stack spacing="xl">
-            <SimpleGrid cols={4}>
-              <Anchor href="https://www.medplum.com/docs/tutorials/api-basics/create-fhir-data">Getting started</Anchor>
-              <Anchor href="https://www.medplum.com/docs/tutorials">Playing with Medplum</Anchor>
-              <Anchor href="https://github.com/medplum/foomedical">Open Source</Anchor>
-              <Anchor href="https://www.medplum.com/docs">Documentation</Anchor>
+            <SimpleGrid cols={3} style={style}>
+              <Anchor href="#" style={style}>Privacy Policy</Anchor>
+              <Anchor href="#" style={style}>Registration Form</Anchor>
+              <Anchor href="http://localhost:3000/register" style={style}>Document</Anchor>
             </SimpleGrid>
             <Divider />
-            <Text color="dimmed" size="sm">
-              &copy; {new Date().getFullYear()} Foo Medical, Inc. All rights reserved.
+            <Text style={style}>
+              &copy; {new Date().getFullYear()} © 2023 Peathad Heldhes. All rights reserved.
             </Text>
           </Stack>
         </Container>

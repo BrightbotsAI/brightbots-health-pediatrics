@@ -16,7 +16,6 @@ const useStyles = createStyles((theme) => {
   const icon = getStylesRef('icon');
   return {
     container: {
-      display:'flex',
       flex: 200,
       width: 200,
       paddingTop: 32,
