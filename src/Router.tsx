@@ -25,11 +25,13 @@ import { Vitals } from './pages/health-record/Vitals';
 import { CalendarMenu } from './pages/calendar';
 import { FormularyGeneral } from './pages/appointments/GeneralAppointment';
 import { FormularySpecial } from './pages/appointments/SpecialAppointment';
+import { HomePediatricPage } from './pages/landing-pediatric';
 
 export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePediatricPage />} />
       <Route path="calendarmenu/*" element={<CalendarMenu />} />
       <Route path="messages/*" element={<Messages />} />
       <Route path="appointment-request/*" element={<Pagerequest />} />
@@ -63,4 +65,4 @@ export function Router(): JSX.Element {
       <Route path="signout" element={<SignOutPage />} />
     </Routes>
   );
-  }
+}
