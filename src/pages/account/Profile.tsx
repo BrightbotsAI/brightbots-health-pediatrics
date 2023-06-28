@@ -11,7 +11,7 @@ export function Profile(): JSX.Element | null {
   const profile = useMedplumProfile() as Patient;
 /*Create Constant */
 const style: React.CSSProperties = {
-  width: '95%', display: "flex", justifyContent: "space-between", margin: "auto", borderBottom:'1px solid rgba(0, 0, 0, 0.25)', padding:' 0 4%', alignItems:'center',};
+  width: '90rem', display: "flex", justifyContent: "space-between", margin: "auto", borderBottom:'1px solid rgba(0, 0, 0, 0.25)', padding:' 0 4%', alignItems:'center',};
 
 const ContainerStyle: React.CSSProperties = 
   {width:'30%', marginLeft:'8rem', marginTop:'1.5%', alignItems:'center', justifyContent:'space-around' ,
@@ -22,7 +22,7 @@ const TitleStyle: React.CSSProperties = {
   color:'#ffffff', fontSize: '25px', fontFamily: 'sans-serif', fontWeight: '300'};
 
 const TextStyle: React.CSSProperties = {
-  color:'#000', fontSize:'25px', fontFamily: 'sans-serif', fontWeight:'300'};
+  color:'#000', fontSize:'18px', fontFamily: 'sans-serif', fontWeight:'300'};
 
 const InfoStyle: React.CSSProperties = {
   width: '50%', height: '60%'};
