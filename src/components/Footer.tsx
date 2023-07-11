@@ -17,7 +17,7 @@ export function Footer(): JSX.Element {
   const { classes } = useStyles();
 
   const style: React.CSSProperties = {
-    color: '#ffffff', fontSize: '24px', fontFamily: 'sans-serif'};
+    color: '#ffffff', fontSize: '15px', fontFamily: 'sans-serif'};
   
 
   return (
@@ -32,7 +32,7 @@ export function Footer(): JSX.Element {
             </SimpleGrid>
             <Divider />
             <Text style={style}>
-              &copy; {new Date().getFullYear()} © 2023 Peathad Heldhes. All rights reserved.
+              &copy; {new Date().getFullYear()} Peathad Heldhes. All rights reserved.
             </Text>
           </Stack>
         </Container>

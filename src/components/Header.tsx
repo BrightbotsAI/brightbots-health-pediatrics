@@ -89,8 +89,7 @@ const useStyles = createStyles((theme) => ({
 
 const navigation = [
   { name: 'Home', href: '' },
-  // { name: 'About Us', href: '#' },
-  { name: 'Patient Scheduling', href: '/general-appointment' },
+  { name: 'Patient Scheduling', href: '/appointment-request' },
 ];
 
 export function Header(): JSX.Element {

@@ -6,6 +6,7 @@ export function SignOutPage(): null {
 
   useEffect(() => {
     medplum.signOut();
+    localStorage.removeItem('activeLogin');
     window.location.href = '/';
   }, [medplum]);
 
